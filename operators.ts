@@ -39,3 +39,13 @@ let greetings = "Hello, TypeScript!";
 let typeOfgreetings = typeof greetings; // Returns 'string'
 
 console.log(typeOfgreetings); 
+
+let a: number = 5;
+let b: number = 10;
+
+console.log(a == 5);  // true
+console.log(a == b);  // false
+
+const d: number = 3, e: number = 2;
+
+console.log(d > e);
