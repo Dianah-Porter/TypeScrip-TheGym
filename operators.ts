@@ -49,3 +49,14 @@ console.log(a == b);  // false
 const d: number = 3, e: number = 2;
 
 console.log(d > e);
+
+let x: number = 2;
+
+// Both expressions are true
+console.log((x < 4) || (3 >= x));  // true
+
+// Only one expression is true
+console.log((x <= 4) || (x == 3));  // true
+
+// Both expressions are false
+console.log((x > 4) || (x == 3));  // false
