@@ -17,4 +17,13 @@ function findSquare(num) {
 console.log(findSquare(3));
 //arrow functions
 var substract = function (num1, num2) { return num1 - num2; };
-console.log(substract(10, 5));
+console.log(substract(10, 5)); //output: 5
+var multiply = function (x, y) {
+    return x * y;
+};
+var divide = function (x, y) {
+    return x / y;
+};
+console.log(multiply(9, 5)); // Output: 45
+console.log(divide(9, 5)); // Output: undefined
+//rest parameters 

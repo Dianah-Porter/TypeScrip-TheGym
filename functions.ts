@@ -32,7 +32,17 @@ let multiply = (x: number, y: number) => {
 }
 
 let divide = (x: number, y: number) => {
-    x / y;
+   return  x / y;
 }
 console.log(multiply(9, 5));  // Output: 45
 console.log(divide(9, 5));  // Output: undefined
+
+//rest parameters 
+function rest(...nums: number[]): void{
+    console.log(nums.reduce((a,b) => a + b));
+}
+
+let nums: number[] = [3,2,4,5];
+console.log(rest(...nums)); //output: 14
+
+
