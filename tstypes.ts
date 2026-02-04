@@ -52,3 +52,44 @@ console.log("Second day of the week:", Day[dayIndex]); //Monday
 
 
 //void
+const logfun = (): void =>{
+    console.log("Hello");
+}
+logfun();
+
+// function showFatalError(): never {
+//     throw new Error("A fatal error occurred. Please restart the app.");
+
+// }
+// showFatalError()
+function keepRunning(): never{
+    while (true) {
+        console.log("Still running...");
+    }
+}
+
+//null
+let nums: number | null = null;
+console.log(typeof nums);  // object
+console.log(nums);  // null
+
+//alias
+type Adder = (num1: number,num2: number) => number;
+const addition: Adder = (x, y ) => x + y;
+
+console.log(addition(3,5));
+
+//car interface
+interface Car {
+    name: string;
+    year: number;
+    color?: string;
+}
+
+const carObj: Car = {
+    name: 'suzuki',
+    year: 2024,
+    
+}
+console.log(carObj.name);
+console.log(typeof carObj.year);
