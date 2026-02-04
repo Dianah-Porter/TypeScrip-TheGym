@@ -45,4 +45,6 @@ function rest(...nums: number[]): void{
 let nums: number[] = [3,2,4,5];
 console.log(rest(...nums)); //output: 14
 
+// Method overloading
+
 
