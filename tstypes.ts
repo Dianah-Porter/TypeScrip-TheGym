@@ -93,3 +93,29 @@ const carObj: Car = {
 }
 console.log(carObj.name);
 console.log(typeof carObj.year);
+
+//interfaces 
+interface Animal{
+    name: string;
+    sound: string;
+    makeSound(): void; 
+}
+
+class Dog implements Animal{
+    name: string;
+    sound: string;
+
+    constructor(name: string, sound: string){
+        this.name = name;
+        this.sound = sound;
+    }
+    makeSound(): void {
+        console.log(`${this.name} says: ${this.sound}`);
+    }
+}
+const obj = new Dog("Simba", "wu wu wu barking ...");
+obj.makeSound()
+
+//type assertion 
+let word = 'Hello' as string;
+let words = <string> 'Hello';

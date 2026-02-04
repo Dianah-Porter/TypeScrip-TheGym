@@ -64,7 +64,19 @@ var addition = function (x, y) { return x + y; };
 console.log(addition(3, 5));
 var carObj = {
     name: 'suzuki',
-    year: 2024
+    year: 2024,
 };
 console.log(carObj.name);
 console.log(typeof carObj.year);
+var Dog = /** @class */ (function () {
+    function Dog(name, sound) {
+        this.name = name;
+        this.sound = sound;
+    }
+    Dog.prototype.makeSound = function () {
+        console.log("".concat(this.name, " says: ").concat(this.sound));
+    };
+    return Dog;
+}());
+var obj = new Dog("Simba", "wu wu wu barking ...");
+obj.makeSound();
