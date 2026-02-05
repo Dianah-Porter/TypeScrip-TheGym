@@ -118,4 +118,32 @@ obj.makeSound()
 
 //type assertion 
 let word = 'Hello' as string;
-let words = <string> 'Hello';
+let words = <string>'Hello';
+
+class Person{
+    public name: string;
+    private gender: string;
+    protected age: number;
+
+    constructor(name:string, gender: string, age: number){
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+    showName(): void{
+        console.log(`The name is ${this.name} and is ${this.gender} `)
+    }
+}
+
+class Student extends Person{
+showAge(): void{
+    console.log(`The student age is ${this.age} years old`)
+}
+}
+
+let ob = new Person("Diane", "Female", 22);
+ob.showName();
+
+let obj2 = new Student("Diane", "Female", 32);
+obj2.showAge();
+

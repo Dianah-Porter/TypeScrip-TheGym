@@ -1,3 +1,18 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 var age = 23;
 var isAdult = age > 18 && false;
 console.log(isAdult);
@@ -80,3 +95,31 @@ var Dog = /** @class */ (function () {
 }());
 var obj = new Dog("Simba", "wu wu wu barking ...");
 obj.makeSound();
+//type assertion 
+var word = 'Hello';
+var words = 'Hello';
+var Person = /** @class */ (function () {
+    function Person(name, gender, age) {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+    Person.prototype.showName = function () {
+        console.log("The name is ".concat(this.name, " and is ").concat(this.gender, " years old"));
+    };
+    return Person;
+}());
+var Student = /** @class */ (function (_super) {
+    __extends(Student, _super);
+    function Student() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Student.prototype.showAge = function () {
+        console.log("The student age is ".concat(this.age, " years old"));
+    };
+    return Student;
+}(Person));
+var ob = new Person("Diane", "Female", 22);
+ob.showName();
+var obj2 = new Student("Diane", "Female", 32);
+obj2.showAge();
