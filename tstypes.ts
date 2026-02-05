@@ -147,3 +147,16 @@ ob.showName();
 let obj2 = new Student("Diane", "Female", 32);
 obj2.showAge();
 
+abstract class Cars{
+    abstract makeNoise(): void;
+}
+
+class Suzuki extends Cars{
+    makeNoise(): void{
+        console.log('The abstract class')
+    }
+}
+const suzu = new Suzuki()
+suzu.makeNoise();
+
+

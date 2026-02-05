@@ -105,7 +105,7 @@ var Person = /** @class */ (function () {
         this.age = age;
     }
     Person.prototype.showName = function () {
-        console.log("The name is ".concat(this.name, " and is ").concat(this.gender, " years old"));
+        console.log("The name is ".concat(this.name, " and is ").concat(this.gender, " "));
     };
     return Person;
 }());
@@ -123,3 +123,20 @@ var ob = new Person("Diane", "Female", 22);
 ob.showName();
 var obj2 = new Student("Diane", "Female", 32);
 obj2.showAge();
+var Cars = /** @class */ (function () {
+    function Cars() {
+    }
+    return Cars;
+}());
+var Suzuki = /** @class */ (function (_super) {
+    __extends(Suzuki, _super);
+    function Suzuki() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Suzuki.prototype.makeNoise = function () {
+        console.log('The abstract class');
+    };
+    return Suzuki;
+}(Cars));
+var suzu = new Suzuki();
+suzu.makeNoise();
