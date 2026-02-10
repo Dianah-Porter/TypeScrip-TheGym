@@ -77,7 +77,8 @@ function separateTypes(array: (string | number)[]){
 console.log(separateTypes([1, "hello", 2, "world", 3]));
 
 
-//Questions 4
+//Questions 4   TypeScript's utility types 
+
 type User = {
     name: string, 
     age: number
@@ -95,3 +96,42 @@ function validateUser(api: unknown){
     }
 }
 console.log(validateUser({name: "Dinah", age: 22 }));
+
+//question 5 mental
+interface Config {
+  host: string;
+  port: number;
+  timeout: number;
+}
+type PartialWithExceptions<T, K extends keyof T> =
+  Partial<T> & Pick<T, K>;
+
+type PartialConfig = PartialWithExceptions<Config, 'host'>;
+
+//test the result 
+const config1: PartialConfig = {
+  host: "localhost"
+}; // ✅ correct
+
+const config2: PartialConfig = {
+  host: "localhost",
+  port: 3000
+}; // ✅ correct
+
+//*******************************/
+interface Config {
+  host: string;
+  port: number;
+  timeout: number;
+}
+type A = Partial<Config>;
+type B  = Pick<Config, 'host'>;
+type C = A & B;
+
+let st: C = {
+  host: 'local',
+  port: 300
+}
+
+console.log(st)
+

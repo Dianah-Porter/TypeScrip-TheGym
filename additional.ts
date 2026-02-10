@@ -25,3 +25,32 @@ class Rectangle implements Box<string>{
 
 const obj = new Rectangle("Yellow")
 obj.printAge();
+
+
+//generic classes 
+
+class Container<T>{
+    private data: T;
+    constructor(value: T){
+        this.data = value;
+    }
+    getdata(){
+        return this.data;
+    }
+}
+
+const obj3 = new Container<string>('Programming');
+console.log(obj3.getdata());
+
+//generic constraints
+function logLength<T  extends {length: number}>(item: T): void{
+    console.log(item.length)
+}
+
+//generics with arrays 
+function getFirstElement<T>(arr: T[]): T | undefined {
+  return arr[0];
+}
+
+console.log(getFirstElement<string>(["a", "b", "c"])); // Output: a
+console.log(getFirstElement<number>([10, 20, 30]));    // Output: 10
